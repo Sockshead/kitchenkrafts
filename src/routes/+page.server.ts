@@ -1,9 +1,10 @@
 import { error } from '@sveltejs/kit';
 import { getContent, getBuilderSearchParams } from '@builder.io/sdk-svelte';
+import { env } from '$env/dynamic/private';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load(event) {
-	const BUILDER_PUBLIC_API_KEY = process.env.BUILDER_PUBLIC_API_KEY;
+	const BUILDER_PUBLIC_API_KEY = env.BUILDER_PUBLIC_API_KEY;
 	const content = await getContent({
 		model: 'page',
 		apiKey: BUILDER_PUBLIC_API_KEY as string,
