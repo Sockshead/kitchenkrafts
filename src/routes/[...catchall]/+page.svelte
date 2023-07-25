@@ -9,7 +9,7 @@
 </svelte:head>
 <main>
 	{#if canShowContent}
-		<RenderContent model="page" content={data.content} apiKey={data.apiKey} />
+		<RenderContent model="page" content={data.content} apiKey={`${data.apiKey}`} />
 	{:else}
 		Content Not Found
 	{/if}
