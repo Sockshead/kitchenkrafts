@@ -22,12 +22,12 @@ export const navbarData: NavBarData = {
 	logo: true,
 	logoSrc: logo,
 	logoLink: true,
-	linkUrl: base,
+	linkUrl: `${base}`,
 	optionalLinkText: 'KitchenKrafts',
 	altText: 'KitchenKrafts Logo',
 	links: [
 		{
-			url: base,
+			url: `${base}/`,
 			displayInNav: true,
 			displayInFooter: false,
 			linkText: 'Home'

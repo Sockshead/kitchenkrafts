@@ -11,7 +11,7 @@
 	let:hidden
 	let:toggle
 >
-	<NavBrand href={base}>
+	<NavBrand href={`${base}/`}>
 		<img src={data.logoSrc} class="mr-3 h-6 sm:h-9" alt={data.altText} />
 		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
 			{data.optionalLinkText}
