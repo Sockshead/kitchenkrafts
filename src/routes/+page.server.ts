@@ -1,20 +1,26 @@
-/*import { error } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import { getContent, getBuilderSearchParams } from '@builder.io/sdk-svelte';
 import { env } from '$env/dynamic/private';
+import type { BuilderContent } from '@builder.io/sdk-svelte/package/types/builder-content.js';
 
-/** @type {import('./$types').PageServerLoad} 
+export type PageServerData = {
+	content: BuilderContent | null;
+	apiKey: string;
+};
+
+/** @type {import('./$types').PageServerLoad} */
 export async function load(event) {
-	const BUILDER_PUBLIC_API_KEY = env.BUILDER_PUBLIC_API_KEY;
 	const content = await getContent({
 		model: 'page',
-		apiKey: BUILDER_PUBLIC_API_KEY as string,
+		apiKey: env.BUILDER_PUBLIC_API_KEY,
 		options: getBuilderSearchParams(event.url.searchParams),
 		userAttributes: {
 			urlPath: event.url.pathname || '/'
 		}
 	});
+	const pageData: PageServerData = { content, apiKey: env.BUILDER_PUBLIC_API_KEY };
 
-	if (content) return { content, apiKey: BUILDER_PUBLIC_API_KEY };
+	if (content) return pageData;
 
 	throw error(404, 'Not Found');
-}*/
+}
