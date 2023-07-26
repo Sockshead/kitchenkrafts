@@ -32,7 +32,7 @@ export const navbarData: NavBarData = {
 			displayInFooter: false,
 			linkText: 'Home'
 		},
-		/*{
+		{
 			url: `${base}/about`,
 			displayInNav: true,
 			displayInFooter: false,
@@ -63,10 +63,10 @@ export const navbarData: NavBarData = {
 			linkText: 'Terms & Conditions'
 		},
 		{
-			url: `${base}/notFound`,
+			url: `${base}/not-found`,
 			displayInNav: false,
 			displayInFooter: false,
 			linkText: ''
-		}*/
+		}
 	]
 };
