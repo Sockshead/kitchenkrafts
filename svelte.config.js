@@ -17,6 +17,9 @@ const config = {
 		adapter: adapter({ fallback: 'index.html' }),
 		paths: {
 			base
+		},
+		prerender: {
+			handleHttpError: 'warn'
 		}
 	}
 };
