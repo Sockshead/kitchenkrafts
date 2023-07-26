@@ -10,7 +10,6 @@
 <main>
 	{#if canShowContent}
 		<RenderContent model="page" content={data.content} apiKey={`${data.apiKey}`} />
-		Test
 	{:else}
 		Content Not Found
 	{/if}
