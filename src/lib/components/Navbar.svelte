@@ -1,16 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
-	import { onMount } from 'svelte';
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 	import type { NavBarData } from '../utils/linkUtils';
-
-	let activeUrl = base;
-
-	onMount(() => {
-		activeUrl = `/${$page.url.pathname}`;
-	});
-
 	export let data: NavBarData;
 </script>
 
@@ -29,7 +21,7 @@
 	<NavUl {hidden}>
 		{#each data.links as link}
 			{#if link.displayInNav}
-				<NavLi href={link.url} active={link.url === activeUrl}>{link.linkText}</NavLi>
+				<NavLi href={link.url} active={$page.url.pathname === link.url}>{link.linkText}</NavLi>
 			{/if}
 		{/each}
 	</NavUl>
