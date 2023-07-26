@@ -11,5 +11,5 @@ export async function load(event) {
 		}
 	});
 
-	return { content, apiKey: env.BUILDER_PUBLIC_API_KEY };
+	return { content, apiKey: env.BUILDER_PUBLIC_API_KEY, pathName: event.url.pathname };
 }
