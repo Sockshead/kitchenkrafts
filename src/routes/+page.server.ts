@@ -2,6 +2,7 @@ import { error } from '@sveltejs/kit';
 import { getContent, getBuilderSearchParams } from '@builder.io/sdk-svelte';
 import { env } from '$env/dynamic/private';
 import type { BuilderContent } from '@builder.io/sdk-svelte/package/types/builder-content.js';
+import { base } from '$app/paths';
 
 export type PageServerData = {
 	content: BuilderContent | null;
@@ -15,7 +16,7 @@ export async function load(event) {
 		apiKey: env.BUILDER_PUBLIC_API_KEY,
 		options: getBuilderSearchParams(event.url.searchParams),
 		userAttributes: {
-			urlPath: event.url.pathname || '/'
+			urlPath: event.url.pathname || base
 		}
 	});
 	const pageData: PageServerData = { content, apiKey: env.BUILDER_PUBLIC_API_KEY };
