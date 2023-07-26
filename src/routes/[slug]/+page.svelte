@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { isPreviewing, RenderContent } from '@builder.io/sdk-svelte';
-	import type { PageServerData } from './+page.server';
-	
-	export let data: PageServerData;
+	export let data;
 	const canShowContent = data.content || isPreviewing();
 </script>
 
