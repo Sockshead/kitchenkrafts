@@ -10,6 +10,7 @@ export async function load(event) {
 			urlPath: event.url.pathname || `/`
 		}
 	});
+	console.log('server', event, content);
 
-	return { content, apiKey: env.BUILDER_PUBLIC_API_KEY, pathName: event.url.pathname };
+	return { content, apiKey: env.BUILDER_PUBLIC_API_KEY };
 }

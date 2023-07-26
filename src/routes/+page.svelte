@@ -1,18 +1,15 @@
 <script lang="ts">
-	import { isPreviewing, RenderContent } from '@builder.io/sdk-svelte';
+	import { RenderContent } from '@builder.io/sdk-svelte';
 	export let data;
-	const canShowContent = data.content || isPreviewing();
+	$: console.log('client', data);
 </script>
 
 <svelte:head>
 	<title>{data.content?.data?.title}</title>
 </svelte:head>
 <main>
-	{#if canShowContent}
+	{#if data.content}
 		<RenderContent model="page" content={data.content} apiKey={`${data.apiKey}`} />
-		Test
-	{:else}
-		Content Not Found
 	{/if}
 	Test
 </main>
