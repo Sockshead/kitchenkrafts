@@ -1,15 +1,17 @@
 <script lang="ts">
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
-	import type { NavBarData } from '../utils/linkUtils';
 	import { onMount } from 'svelte';
-	export let data: NavBarData;
-	let activeUrl = '';
-	
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+	import type { NavBarData } from '../utils/linkUtils';
+
+	let activeUrl = base;
+
 	onMount(() => {
-		activeUrl = $page.url.pathname;
+		activeUrl = `/${$page.url.pathname}`;
 	});
+
+	export let data: NavBarData;
 </script>
 
 <Navbar
