@@ -16,7 +16,7 @@ export async function load(event) {
 		apiKey: env.BUILDER_PUBLIC_API_KEY,
 		options: getBuilderSearchParams(event.url.searchParams),
 		userAttributes: {
-			urlPath: `${base}/${event.url.pathname}` || base
+			urlPath: event.url.pathname || base
 		}
 	});
 	const pageData: PageServerData = { content, apiKey: env.BUILDER_PUBLIC_API_KEY };
