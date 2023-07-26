@@ -9,7 +9,7 @@ export async function load(event) {
 		apiKey: env.BUILDER_PUBLIC_API_KEY,
 		options: getBuilderSearchParams(event.params),
 		userAttributes: {
-			urlPath: `${base}/${event.url.pathname}` || `${base}/`
+			urlPath: event.url.pathname || `${base}/`
 		}
 	});
 
