@@ -14,7 +14,7 @@ export async function load(event) {
 	const content = await getContent({
 		model: 'page',
 		apiKey: env.BUILDER_PUBLIC_API_KEY,
-		options: getBuilderSearchParams(event.params),
+		//options: getBuilderSearchParams(event.url.pathname),
 		userAttributes: {
 			urlPath: event.url.pathname || base
 		}
