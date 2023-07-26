@@ -28,7 +28,7 @@ jobs:
           static_site_generator: "sveltekit"
       - name: build
         env:
-          BASE_PATH: ${{ env.BASE_PATH }}
+          BASE_PATH: '/kitchenkrafts'
           BUILDER_PUBLIC_API_KEY: ${{ env.BUILDER_PUBLIC_API_KEY }}
         run: |
           npm run build
