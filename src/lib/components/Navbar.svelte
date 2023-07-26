@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, DarkMode } from 'flowbite-svelte';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 	import { page } from '$app/stores';
-	import type { NavBarData } from '../../utils/linkUtils';
+	import type { NavBarData } from '../utils/linkUtils';
+	import { base } from '$app/paths';
 	export let data: NavBarData;
 </script>
 
@@ -10,7 +11,7 @@
 	let:hidden
 	let:toggle
 >
-	<NavBrand href="/">
+	<NavBrand href={base}>
 		<img src={data.logoSrc} class="mr-3 h-6 sm:h-9" alt={data.altText} />
 		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
 			{data.optionalLinkText}
