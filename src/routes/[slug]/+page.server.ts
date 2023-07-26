@@ -1,8 +1,8 @@
-import { error } from '@sveltejs/kit';
+/*import { error } from '@sveltejs/kit';
 import { getContent, getBuilderSearchParams } from '@builder.io/sdk-svelte';
 import { env } from '$env/dynamic/private';
 
-/** @type {import('./$types').PageServerLoad} */
+/** @type {import('./$types').PageServerLoad} 
 export async function load(event) {
 	const BUILDER_PUBLIC_API_KEY = env.BUILDER_PUBLIC_API_KEY;
 	const content = await getContent({
@@ -17,4 +17,4 @@ export async function load(event) {
 	if (content) return { content, apiKey: BUILDER_PUBLIC_API_KEY };
 
 	throw error(404, 'Not Found');
-}
+}*/
